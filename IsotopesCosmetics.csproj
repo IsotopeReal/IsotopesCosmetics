@@ -13,7 +13,7 @@
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\PEAK\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="PEAKCosmeticsLib">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\PEAK\BepInEx\PEAKCosmeticsLib.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\PEAK\BepInEx\plugins\PEAKCosmeticsLib.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\PEAK\PEAK_Data\Managed\UnityEngine.dll</HintPath>
