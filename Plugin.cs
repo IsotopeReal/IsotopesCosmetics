@@ -13,8 +13,10 @@ public class IsotopesCosmetics : BaseUnityPlugin
     {
         string assemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         string bundlePath = Path.Combine(assemblyFolder, "IsotopesCosmeticsBundle");
+
         Logger.LogInfo($"Attempting to load assetbundle from: {bundlePath}");
-        StartCoroutine(CosmeticAPI.LoadCosmeticAssetBundle(bundlePath, OnBundleLoaded));
+
+        StartCoroutine(CosmeticAPI.LoadCosmeticAssetBundleAsync(bundlePath, OnBundleLoaded));
     }
 
     void OnBundleLoaded(AssetBundle? IsotopesBundle)
@@ -25,14 +27,14 @@ public class IsotopesCosmetics : BaseUnityPlugin
             return;
         }
 
-        Logger.LogInfo("IsotopeCosmeticsBundle loaded successfully.");
+        Logger.LogInfo("IsotopeCosmeticsBundle loaded successfully. Adding cosmetics..");
 
         var hatNamesToAdd = new List<string>
         {
             "panda","froggy","zombie","cherry","crazyman","mallow","pnapple","pumpkin","gasmask","peamask","plunger","squidg","poctopus","pacman","duckfloat","dogeh"
         };
 
-        CosmeticAPI.AddHatsFromBundle(IsotopesBundle, hatNamesToAdd);
+        StartCoroutine(CosmeticAPI.AddHatsFromBundleAsync(IsotopesBundle, hatNamesToAdd));
 
         Logger.LogInfo("Isotope's Cosmetics has finished adding all hats!");
     }
